@@ -25,7 +25,6 @@ var sendMessagePost = function() {
 
 var sendJWT = function() {
 	var boxElem = document.getElementById("box2");
-	var boxElem = document.getElementById("box");
 	$.ajax({
 		type:"POST",
 		url: "/send",

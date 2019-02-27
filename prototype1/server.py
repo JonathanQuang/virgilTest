@@ -19,10 +19,12 @@ def messageOriginal():
     print(vFL.get_private_key())
     print(vFL.get_public_key())
     print(vFL.generate_JWT_for_user(request.form['message']))
+    vFL2 = virgilServerClient.VirgilServerClient()
+    jwt = vFL2.authenticated_query_to_server(request.form['message'])
+
    # print(vFL.publish_card())
-    return jsonify(publc_key = str(vFL.get_public_key()), 
-                    private_key = str(vFL.get_private_key),
-                    messageJWT = str(vFL.generate_JWT_for_user(request.form['message']))                
+    return jsonify(
+                    messageJWT = str(jwt)                
                     )
 
 @app.route('/send', methods=['POST'])
