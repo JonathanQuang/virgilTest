@@ -1,0 +1,17 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{url_for('static',filename = 'test.js')}}"></script>
+
+<body>
+    <form action="{{url_for('message')}}" method = "post">
+        Message to encode: <br>
+        <input type = "text" name = "message" id="box">
+        <br>
+    </form>
+    <form action = "" method = "post">
+	<input type = "text" name = "message" id = "box2">
+	</form>
+	<pre>
+		<code id="codeId">
+		</code>
+	</pre>
+</body>
